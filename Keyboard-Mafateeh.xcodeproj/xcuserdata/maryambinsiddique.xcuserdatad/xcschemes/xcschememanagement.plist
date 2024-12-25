@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>EnglishKeyboardView.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Keyboard-Mafateeh.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>

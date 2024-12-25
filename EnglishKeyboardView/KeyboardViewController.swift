@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class KeyboardViewController: UIInputViewController {
 
@@ -21,6 +22,22 @@ class KeyboardViewController: UIInputViewController {
         super.viewDidLoad()
         
         // Perform custom UI setup here
+        
+        let KeyboardViewController = UIHostingController(rootView: MainEnglishKeyboard(proxy: self.textDocumentProxy))
+        let MainEnglishKeyboard = KeyboardViewController.view!
+        MainEnglishKeyboard.translatesAutoresizingMaskIntoConstraints = false
+        MainEnglishKeyboard.backgroundColor = .systemGray4
+        addChild(KeyboardViewController)
+        view.addSubview(MainEnglishKeyboard)
+        NSLayoutConstraint.activate([
+            MainEnglishKeyboard.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            MainEnglishKeyboard.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            MainEnglishKeyboard.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            MainEnglishKeyboard.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.75) // Takes up 65% of the height
+        ]);
+        KeyboardViewController.didMove(toParent: self)
+        
+        
         self.nextKeyboardButton = UIButton(type: .system)
         
         self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), for: [])
@@ -33,6 +50,7 @@ class KeyboardViewController: UIInputViewController {
         
         self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+    
     }
     
     override func viewWillLayoutSubviews() {

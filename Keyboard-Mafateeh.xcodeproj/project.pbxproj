@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		323874952D1BEE190078B374 /* EnglishKeyboardView.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3238748E2D1BEE190078B374 /* EnglishKeyboardView.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		3238746E2D1BEDF20078B374 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,13 +25,45 @@
 			remoteGlobalIDString = 3238745A2D1BEDF10078B374;
 			remoteInfo = "Keyboard-Mafateeh";
 		};
+		323874932D1BEE190078B374 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 323874532D1BEDF10078B374 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3238748D2D1BEE190078B374;
+			remoteInfo = EnglishKeyboardView;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3238749A2D1BEE190078B374 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				323874952D1BEE190078B374 /* EnglishKeyboardView.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3238745B2D1BEDF10078B374 /* Keyboard-Mafateeh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keyboard-Mafateeh.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3238746D2D1BEDF20078B374 /* Keyboard-MafateehTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Keyboard-MafateehTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		323874772D1BEDF20078B374 /* Keyboard-MafateehUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Keyboard-MafateehUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3238748E2D1BEE190078B374 /* EnglishKeyboardView.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EnglishKeyboardView.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		323874962D1BEE190078B374 /* Exceptions for "EnglishKeyboardView" folder in "EnglishKeyboardView" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3238748D2D1BEE190078B374 /* EnglishKeyboardView */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3238745D2D1BEDF10078B374 /* Keyboard-Mafateeh */ = {
@@ -43,6 +79,14 @@
 		3238747A2D1BEDF20078B374 /* Keyboard-MafateehUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Keyboard-MafateehUITests";
+			sourceTree = "<group>";
+		};
+		3238748F2D1BEE190078B374 /* EnglishKeyboardView */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				323874962D1BEE190078B374 /* Exceptions for "EnglishKeyboardView" folder in "EnglishKeyboardView" target */,
+			);
+			path = EnglishKeyboardView;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,6 +113,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3238748B2D1BEE190078B374 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +129,7 @@
 				3238745D2D1BEDF10078B374 /* Keyboard-Mafateeh */,
 				323874702D1BEDF20078B374 /* Keyboard-MafateehTests */,
 				3238747A2D1BEDF20078B374 /* Keyboard-MafateehUITests */,
+				3238748F2D1BEE190078B374 /* EnglishKeyboardView */,
 				3238745C2D1BEDF10078B374 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +140,7 @@
 				3238745B2D1BEDF10078B374 /* Keyboard-Mafateeh.app */,
 				3238746D2D1BEDF20078B374 /* Keyboard-MafateehTests.xctest */,
 				323874772D1BEDF20078B374 /* Keyboard-MafateehUITests.xctest */,
+				3238748E2D1BEE190078B374 /* EnglishKeyboardView.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,10 +155,12 @@
 				323874572D1BEDF10078B374 /* Sources */,
 				323874582D1BEDF10078B374 /* Frameworks */,
 				323874592D1BEDF10078B374 /* Resources */,
+				3238749A2D1BEE190078B374 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				323874942D1BEE190078B374 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				3238745D2D1BEDF10078B374 /* Keyboard-Mafateeh */,
@@ -163,6 +218,28 @@
 			productReference = 323874772D1BEDF20078B374 /* Keyboard-MafateehUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		3238748D2D1BEE190078B374 /* EnglishKeyboardView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 323874972D1BEE190078B374 /* Build configuration list for PBXNativeTarget "EnglishKeyboardView" */;
+			buildPhases = (
+				3238748A2D1BEE190078B374 /* Sources */,
+				3238748B2D1BEE190078B374 /* Frameworks */,
+				3238748C2D1BEE190078B374 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3238748F2D1BEE190078B374 /* EnglishKeyboardView */,
+			);
+			name = EnglishKeyboardView;
+			packageProductDependencies = (
+			);
+			productName = EnglishKeyboardView;
+			productReference = 3238748E2D1BEE190078B374 /* EnglishKeyboardView.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,6 +261,9 @@
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = 3238745A2D1BEDF10078B374;
 					};
+					3238748D2D1BEE190078B374 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 				};
 			};
 			buildConfigurationList = 323874562D1BEDF10078B374 /* Build configuration list for PBXProject "Keyboard-Mafateeh" */;
@@ -203,6 +283,7 @@
 				3238745A2D1BEDF10078B374 /* Keyboard-Mafateeh */,
 				3238746C2D1BEDF20078B374 /* Keyboard-MafateehTests */,
 				323874762D1BEDF20078B374 /* Keyboard-MafateehUITests */,
+				3238748D2D1BEE190078B374 /* EnglishKeyboardView */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +304,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		323874752D1BEDF20078B374 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3238748C2D1BEE190078B374 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +341,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3238748A2D1BEE190078B374 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +360,11 @@
 			isa = PBXTargetDependency;
 			target = 3238745A2D1BEDF10078B374 /* Keyboard-Mafateeh */;
 			targetProxy = 323874782D1BEDF20078B374 /* PBXContainerItemProxy */;
+		};
+		323874942D1BEE190078B374 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3238748D2D1BEE190078B374 /* EnglishKeyboardView */;
+			targetProxy = 323874932D1BEE190078B374 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -518,6 +618,56 @@
 			};
 			name = Release;
 		};
+		323874982D1BEE190078B374 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EnglishKeyboardView/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EnglishKeyboardView;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh.EnglishKeyboardView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		323874992D1BEE190078B374 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EnglishKeyboardView/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EnglishKeyboardView;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh.EnglishKeyboardView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -553,6 +703,15 @@
 			buildConfigurations = (
 				323874882D1BEDF20078B374 /* Debug */,
 				323874892D1BEDF20078B374 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		323874972D1BEE190078B374 /* Build configuration list for PBXNativeTarget "EnglishKeyboardView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				323874982D1BEE190078B374 /* Debug */,
+				323874992D1BEE190078B374 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
