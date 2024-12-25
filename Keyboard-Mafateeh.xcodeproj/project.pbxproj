@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		3238746E2D1BEDF20078B374 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 323874532D1BEDF10078B374 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3238745A2D1BEDF10078B374;
+			remoteInfo = "Keyboard-Mafateeh";
+		};
+		323874782D1BEDF20078B374 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 323874532D1BEDF10078B374 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3238745A2D1BEDF10078B374;
+			remoteInfo = "Keyboard-Mafateeh";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3238745B2D1BEDF10078B374 /* Keyboard-Mafateeh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keyboard-Mafateeh.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3238746D2D1BEDF20078B374 /* Keyboard-MafateehTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Keyboard-MafateehTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		323874772D1BEDF20078B374 /* Keyboard-MafateehUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Keyboard-MafateehUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3238745D2D1BEDF10078B374 /* Keyboard-Mafateeh */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Keyboard-Mafateeh";
+			sourceTree = "<group>";
+		};
+		323874702D1BEDF20078B374 /* Keyboard-MafateehTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Keyboard-MafateehTests";
+			sourceTree = "<group>";
+		};
+		3238747A2D1BEDF20078B374 /* Keyboard-MafateehUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Keyboard-MafateehUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		323874582D1BEDF10078B374 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3238746A2D1BEDF20078B374 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		323874742D1BEDF20078B374 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		323874522D1BEDF10078B374 = {
+			isa = PBXGroup;
+			children = (
+				3238745D2D1BEDF10078B374 /* Keyboard-Mafateeh */,
+				323874702D1BEDF20078B374 /* Keyboard-MafateehTests */,
+				3238747A2D1BEDF20078B374 /* Keyboard-MafateehUITests */,
+				3238745C2D1BEDF10078B374 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3238745C2D1BEDF10078B374 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3238745B2D1BEDF10078B374 /* Keyboard-Mafateeh.app */,
+				3238746D2D1BEDF20078B374 /* Keyboard-MafateehTests.xctest */,
+				323874772D1BEDF20078B374 /* Keyboard-MafateehUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3238745A2D1BEDF10078B374 /* Keyboard-Mafateeh */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 323874812D1BEDF20078B374 /* Build configuration list for PBXNativeTarget "Keyboard-Mafateeh" */;
+			buildPhases = (
+				323874572D1BEDF10078B374 /* Sources */,
+				323874582D1BEDF10078B374 /* Frameworks */,
+				323874592D1BEDF10078B374 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3238745D2D1BEDF10078B374 /* Keyboard-Mafateeh */,
+			);
+			name = "Keyboard-Mafateeh";
+			packageProductDependencies = (
+			);
+			productName = "Keyboard-Mafateeh";
+			productReference = 3238745B2D1BEDF10078B374 /* Keyboard-Mafateeh.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3238746C2D1BEDF20078B374 /* Keyboard-MafateehTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 323874842D1BEDF20078B374 /* Build configuration list for PBXNativeTarget "Keyboard-MafateehTests" */;
+			buildPhases = (
+				323874692D1BEDF20078B374 /* Sources */,
+				3238746A2D1BEDF20078B374 /* Frameworks */,
+				3238746B2D1BEDF20078B374 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3238746F2D1BEDF20078B374 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				323874702D1BEDF20078B374 /* Keyboard-MafateehTests */,
+			);
+			name = "Keyboard-MafateehTests";
+			packageProductDependencies = (
+			);
+			productName = "Keyboard-MafateehTests";
+			productReference = 3238746D2D1BEDF20078B374 /* Keyboard-MafateehTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		323874762D1BEDF20078B374 /* Keyboard-MafateehUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 323874872D1BEDF20078B374 /* Build configuration list for PBXNativeTarget "Keyboard-MafateehUITests" */;
+			buildPhases = (
+				323874732D1BEDF20078B374 /* Sources */,
+				323874742D1BEDF20078B374 /* Frameworks */,
+				323874752D1BEDF20078B374 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				323874792D1BEDF20078B374 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3238747A2D1BEDF20078B374 /* Keyboard-MafateehUITests */,
+			);
+			name = "Keyboard-MafateehUITests";
+			packageProductDependencies = (
+			);
+			productName = "Keyboard-MafateehUITests";
+			productReference = 323874772D1BEDF20078B374 /* Keyboard-MafateehUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		323874532D1BEDF10078B374 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					3238745A2D1BEDF10078B374 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					3238746C2D1BEDF20078B374 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 3238745A2D1BEDF10078B374;
+					};
+					323874762D1BEDF20078B374 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 3238745A2D1BEDF10078B374;
+					};
+				};
+			};
+			buildConfigurationList = 323874562D1BEDF10078B374 /* Build configuration list for PBXProject "Keyboard-Mafateeh" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 323874522D1BEDF10078B374;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3238745C2D1BEDF10078B374 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3238745A2D1BEDF10078B374 /* Keyboard-Mafateeh */,
+				3238746C2D1BEDF20078B374 /* Keyboard-MafateehTests */,
+				323874762D1BEDF20078B374 /* Keyboard-MafateehUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		323874592D1BEDF10078B374 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3238746B2D1BEDF20078B374 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		323874752D1BEDF20078B374 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		323874572D1BEDF10078B374 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		323874692D1BEDF20078B374 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		323874732D1BEDF20078B374 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3238746F2D1BEDF20078B374 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3238745A2D1BEDF10078B374 /* Keyboard-Mafateeh */;
+			targetProxy = 3238746E2D1BEDF20078B374 /* PBXContainerItemProxy */;
+		};
+		323874792D1BEDF20078B374 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3238745A2D1BEDF10078B374 /* Keyboard-Mafateeh */;
+			targetProxy = 323874782D1BEDF20078B374 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3238747F2D1BEDF20078B374 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		323874802D1BEDF20078B374 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		323874822D1BEDF20078B374 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Keyboard-Mafateeh/Preview Content\"";
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		323874832D1BEDF20078B374 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Keyboard-Mafateeh/Preview Content\"";
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		323874852D1BEDF20078B374 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-MafateehTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keyboard-Mafateeh.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Keyboard-Mafateeh";
+			};
+			name = Debug;
+		};
+		323874862D1BEDF20078B374 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-MafateehTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keyboard-Mafateeh.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Keyboard-Mafateeh";
+			};
+			name = Release;
+		};
+		323874882D1BEDF20078B374 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-MafateehUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Keyboard-Mafateeh";
+			};
+			name = Debug;
+		};
+		323874892D1BEDF20078B374 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-MafateehUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Keyboard-Mafateeh";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		323874562D1BEDF10078B374 /* Build configuration list for PBXProject "Keyboard-Mafateeh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3238747F2D1BEDF20078B374 /* Debug */,
+				323874802D1BEDF20078B374 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		323874812D1BEDF20078B374 /* Build configuration list for PBXNativeTarget "Keyboard-Mafateeh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				323874822D1BEDF20078B374 /* Debug */,
+				323874832D1BEDF20078B374 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		323874842D1BEDF20078B374 /* Build configuration list for PBXNativeTarget "Keyboard-MafateehTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				323874852D1BEDF20078B374 /* Debug */,
+				323874862D1BEDF20078B374 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		323874872D1BEDF20078B374 /* Build configuration list for PBXNativeTarget "Keyboard-MafateehUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				323874882D1BEDF20078B374 /* Debug */,
+				323874892D1BEDF20078B374 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 323874532D1BEDF10078B374 /* Project object */;
+}
