@@ -33,7 +33,7 @@ class KeyboardViewController: UIInputViewController {
             MainEnglishKeyboard.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             MainEnglishKeyboard.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             MainEnglishKeyboard.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            MainEnglishKeyboard.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.75) // Takes up 65% of the height
+            MainEnglishKeyboard.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1.0)
         ]);
         KeyboardViewController.didMove(toParent: self)
         

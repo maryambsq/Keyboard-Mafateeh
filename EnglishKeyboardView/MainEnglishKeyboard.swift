@@ -37,6 +37,9 @@ struct MainEnglishKeyboard: View {
     
     var body: some View {
         VStack(spacing: 5) {
+            // Top Bar Section with Predictive Text and Clipboard Button
+            TopBarView(proxy: proxy)
+                .padding(.bottom)
             // Enlarged Keys View
             if showEnlargedKeys {
                 VStack {
@@ -94,7 +97,7 @@ struct MainEnglishKeyboard: View {
                         }
 
                         // Space Bar
-                        Button("Space") {
+                        Button("space") {
                             proxy.insertText(" ")
                         }
                         .frame(maxWidth: .infinity, maxHeight: 56)
@@ -103,7 +106,7 @@ struct MainEnglishKeyboard: View {
                         .foregroundStyle(.black)
                         
                         // Return Key
-                        Button("Return") {
+                        Button("return") {
                             proxy.insertText("\n")
                         }
                         .frame(width: 111, height: 55)
@@ -224,7 +227,7 @@ struct MainEnglishKeyboard: View {
                         }
                         
                         // Space Bar
-                        Button("Space") {
+                        Button("space") {
                             proxy.insertText(" ")
                         }
                         .frame(maxWidth: .infinity, maxHeight: 56)
@@ -233,7 +236,7 @@ struct MainEnglishKeyboard: View {
                         .foregroundStyle(.black)
                         
                         // Return Key
-                        Button("Return") {
+                        Button("return") {
                             proxy.insertText("\n")
                         }
                         .frame(width: 111, height: 55)
@@ -247,6 +250,46 @@ struct MainEnglishKeyboard: View {
             }
         }
     }
+    
+    // MARK: - Top Bar View
+    struct TopBarView: View {
+        @State var proxy: UITextDocumentProxy
+
+        var body: some View {
+            HStack(spacing: 10) {
+                // Left Predictive Text
+                Button("Word 1") {
+                    proxy.insertText("Word 1")
+                }
+                .frame(maxWidth: .infinity, maxHeight: 46)
+                .foregroundStyle(.black)
+
+                // Clipboard Button
+                Button(action: {
+                    if let clipboardText = UIPasteboard.general.string {
+                        proxy.insertText(clipboardText) // Inserts clipboard text
+                    }
+                }) {
+                    Image(systemName: "list.clipboard")
+                        .font(.system(size: 30))
+                        .frame(width: 56, height: 55)
+                        .background(Color(.systemGray2))
+                        .cornerRadius(8)
+                        .foregroundStyle(.black)
+                }
+
+                // Right Predictive Text
+                Button("Word 2") {
+                    proxy.insertText("Word 2")
+                }
+                .frame(maxWidth: .infinity, maxHeight: 46)
+                .foregroundStyle(.black)
+            }
+            .padding(.horizontal)
+            .padding(.top)
+        }
+    }
+    
     // Enlarged Keys Templates
     func templateOne(keys: [String], proxy: UITextDocumentProxy, showEnlargedKeys: Binding<Bool>) -> some View {
         VStack(spacing: 20) {
