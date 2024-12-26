@@ -12,7 +12,8 @@ struct MainEnglishKeyboard: View {
     @State private var enlargedKeys: [String] = [] // Enlarged keys
     @State private var showEnlargedKeys = false // Toggle view state
     @State private var isUppercase = false // Track Shift state
-
+    @State private var predictions: [String] = ["", ""]
+    
     // Grouped Keys (Lowercase)
     let group1Lower: [(String, [String])] = [
         ("q  w  e                    a  s  d", ["q", "w", "e", "a", "s", "d"]),
@@ -38,7 +39,7 @@ struct MainEnglishKeyboard: View {
     var body: some View {
         VStack(spacing: 5) {
             // Top Bar Section with Predictive Text and Clipboard Button
-            TopBarView(proxy: proxy)
+            TopBarView(proxy: proxy, predictions: $predictions)
                 .padding(.bottom)
             // Enlarged Keys View
             if showEnlargedKeys {
@@ -249,20 +250,30 @@ struct MainEnglishKeyboard: View {
                 .padding(.horizontal)
             }
         }
+        .onChange(of: proxy.documentContextBeforeInput) { newValue in
+            updatePredictions(from: newValue)
+        }
     }
     
     // MARK: - Top Bar View
     struct TopBarView: View {
         @State var proxy: UITextDocumentProxy
+        @Binding var predictions: [String]
 
         var body: some View {
-            HStack(spacing: 10) {
+            HStack {
                 // Left Predictive Text
-                Button("Word 1") {
-                    proxy.insertText("Word 1")
+                Button(predictions[0]) {
+                                proxy.insertText(predictions[0] + " ")
                 }
                 .frame(maxWidth: .infinity, maxHeight: 46)
                 .foregroundStyle(.black)
+                .font(.system(size: 25))
+                
+                // Divider Line
+                Divider()
+                    .frame(height: 30)
+                    .background(Color(.systemGray3))
 
                 // Clipboard Button
                 Button(action: {
@@ -277,19 +288,59 @@ struct MainEnglishKeyboard: View {
                         .cornerRadius(8)
                         .foregroundStyle(.black)
                 }
+                .padding(.horizontal)
+
+                // Divider Line
+                Divider()
+                    .frame(height: 30)
+                    .background(Color(.systemGray3))
 
                 // Right Predictive Text
-                Button("Word 2") {
-                    proxy.insertText("Word 2")
+                Button(predictions[1]) {
+                    proxy.insertText(predictions[1] + " ")
                 }
                 .frame(maxWidth: .infinity, maxHeight: 46)
                 .foregroundStyle(.black)
+                .font(.system(size: 25))
             }
             .padding(.horizontal)
             .padding(.top)
         }
     }
     
+    
+    // Prediction Logic
+    func updatePredictions(from context: String?) {
+        guard let context = context, !context.isEmpty else {
+            predictions = ["I", "We"] // Default predictions
+            return
+        }
+
+        let words = context.split(separator: " ")
+        let lastWord = words.last?.lowercased() ?? ""
+
+        // Example static predictions based on the last word
+        switch lastWord {
+        case "i":
+            predictions = ["I'm", "is"]
+        case "h":
+            predictions = ["hi", "hello"]
+        case "you":
+            predictions = ["are", "will"]
+        case "we":
+            predictions = ["are", "can"]
+        case "he":
+            predictions = ["is", "was"]
+        case "she":
+            predictions = ["is", "was"]
+        case "it":
+            predictions = ["is", "will"]
+        default:
+            predictions = ["I", "The"]
+        }
+    }
+}
+
     // Enlarged Keys Templates
     func templateOne(keys: [String], proxy: UITextDocumentProxy, showEnlargedKeys: Binding<Bool>) -> some View {
         VStack(spacing: 20) {
@@ -351,4 +402,4 @@ struct MainEnglishKeyboard: View {
         }
         .padding(.bottom, 20)
     }
-}
+
