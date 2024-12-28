@@ -27,7 +27,6 @@ struct Keyboard_MafateehApp: App {
         WindowGroup {
             ContentView()
                 .modelContainer(sharedModelContainer)
-
         }
     }
 }

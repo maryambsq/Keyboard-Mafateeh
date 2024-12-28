@@ -7,15 +7,36 @@
 
 import UIKit
 import SwiftUI
+import SwiftData
+
+@Model
+class Phrase: Identifiable {
+    @Attribute(.unique) var content: String
+
+    init(content: String) {
+        self.content = content
+    }
+}
 
 class KeyboardViewController: UIInputViewController {
+    
+    var sharedModelContainer: ModelContainer = {
+        let schema = Schema([
+            Phrase.self,
+        ])
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+
+        do {
+            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+        } catch {
+            fatalError("Could not create ModelContainer: \(error)")
+        }
+    }()
 
     @IBOutlet var nextKeyboardButton: UIButton!
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
-        
-        // Add custom view sizing constraints here
     }
     
     override func viewDidLoad() {
@@ -23,10 +44,13 @@ class KeyboardViewController: UIInputViewController {
         
         // Perform custom UI setup here
         
-        let KeyboardViewController = UIHostingController(rootView: MainEnglishKeyboard(proxy: self.textDocumentProxy))
+        let KeyboardViewController = UIHostingController(
+            rootView: MainEnglishKeyboard(
+                proxy: self.textDocumentProxy)
+        )
         let MainEnglishKeyboard = KeyboardViewController.view!
         MainEnglishKeyboard.translatesAutoresizingMaskIntoConstraints = false
-        MainEnglishKeyboard.backgroundColor = .systemGray4
+        MainEnglishKeyboard.backgroundColor = UIColor.systemGray4
         addChild(KeyboardViewController)
         view.addSubview(MainEnglishKeyboard)
         NSLayoutConstraint.activate([
@@ -76,3 +100,18 @@ class KeyboardViewController: UIInputViewController {
     }
 
 }
+
+//class KeyboardViewController: UIInputViewController {
+//
+//    var sharedModelContainer: ModelContainer = {
+//        let schema = Schema([
+//            Phrase.self, // Make sure the Phrase model is included
+//        ])
+//        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+//
+//        do {
+//            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+//        } catch {
+//            fatalError("Could not create ModelContainer: \(error)")
+//        }
+//    }()

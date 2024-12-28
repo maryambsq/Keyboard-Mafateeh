@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MainEnglishKeyboard: View {
     @State var proxy: UITextDocumentProxy
@@ -13,6 +14,11 @@ struct MainEnglishKeyboard: View {
     @State private var showEnlargedKeys = false // Toggle view state
     @State private var isUppercase = false // Track Shift state
     @State private var predictions: [String] = ["", ""]
+    @Environment(\.modelContext) private var modelContext
+    @Query private var savedPhrases: [Phrase] // Fetch saved phrases
+    @State private var showClipboard = false // Track whether clipboard view is open
+    @State private var showClipboardKeys = false // New toggle for clipboard layout
+
     
     // Grouped Keys (Lowercase)
     let group1Lower: [(String, [String])] = [
@@ -38,18 +44,42 @@ struct MainEnglishKeyboard: View {
     
     var body: some View {
         VStack(spacing: 5) {
-            // Top Bar Section with Predictive Text and Clipboard Button
-            TopBarView(proxy: proxy, predictions: $predictions)
+            // Conditionally show TopBarView only when ClipboardKeysView is NOT displayed
+            if !showClipboardKeys {
+                TopBarView(
+                    proxy: proxy,
+                    predictions: $predictions,
+                    showClipboard: $showClipboard,
+                    showClipboardKeys: $showClipboardKeys
+                )
                 .padding(.bottom)
-            // Enlarged Keys View
-            if showEnlargedKeys {
+            }
+
+            // Check if ClipboardKeysView should be shown
+            if showClipboardKeys {
+                // Enlarged clipboard layout
+                ClipboardKeysView(
+                    proxy: proxy,
+                    showClipboardKeys: $showClipboardKeys
+                )
+            } else if showEnlargedKeys {
+                // Enlarged keys layout
                 VStack {
                     ZStack {
                         if enlargedKeys.count == 6 {
-                            templateOne(keys: enlargedKeys, proxy: proxy, showEnlargedKeys: $showEnlargedKeys)
+                            templateOne(
+                                keys: enlargedKeys,
+                                proxy: proxy,
+                                showEnlargedKeys: $showEnlargedKeys
+                            )
                         } else {
-                            templateTwo(keys: enlargedKeys, proxy: proxy, showEnlargedKeys: $showEnlargedKeys)
+                            templateTwo(
+                                keys: enlargedKeys,
+                                proxy: proxy,
+                                showEnlargedKeys: $showEnlargedKeys
+                            )
                         }
+
                         VStack {
                             // Back Button
                             Button(action:  {
@@ -64,7 +94,8 @@ struct MainEnglishKeyboard: View {
                                     .padding(.top)
                                     .padding(.leading)
                             }
-                            // Backspace
+
+                            // Backspace Button
                             Button(action: {
                                 proxy.deleteBackward()
                             }) {
@@ -80,13 +111,11 @@ struct MainEnglishKeyboard: View {
                         .padding(.leading, 290)
                     }
                     
-                    
-
-                    
+                    // Bottom buttons for space, shift, return
                     HStack {
                         // Shift Button
                         Button(action: {
-                            isUppercase.toggle() // Toggle between uppercase and lowercase
+                            isUppercase.toggle()
                         }) {
                             Image(systemName: isUppercase ? "shift.fill" : "shift")
                                 .font(.system(size: 30))
@@ -117,12 +146,10 @@ struct MainEnglishKeyboard: View {
                         .padding(.trailing, -5)
                     }
                     .padding(.horizontal)
-
                 }
             } else {
                 // Main Keyboard Layout
                 VStack(spacing: 10) {
-                    // Grouped Keys (Rows)
                     let group1 = isUppercase ? group1Upper : group1Lower
                     let group2 = isUppercase ? group2Upper : group2Lower
                     
@@ -130,10 +157,10 @@ struct MainEnglishKeyboard: View {
                         HStack {
                             ForEach(group1, id: \.0) { key, keys in
                                 Button(action: {
-                                    enlargedKeys = keys // Preserves the exact key order
+                                    enlargedKeys = keys
                                     showEnlargedKeys = true
                                 }) {
-                                    Text(key) // Displays the group label
+                                    Text(key)
                                         .frame(width: 119, height: 108)
                                         .font(.system(size: 30))
                                         .background(Color(.white))
@@ -146,12 +173,13 @@ struct MainEnglishKeyboard: View {
                         HStack {
                             // Shift Button
                             Button(action: {
-                                isUppercase.toggle() // Toggle between uppercase and lowercase
+                                isUppercase.toggle()
                             }) {
                                 Image(systemName: isUppercase ? "shift.fill" : "shift")
                                     .font(.system(size: 30))
                                     .frame(width: 55.5, height: 108)
-                                    .background(isUppercase ? Color(.white) : Color(.systemGray2))                                    .cornerRadius(8)
+                                    .background(isUppercase ? Color(.white) : Color(.systemGray2))
+                                    .cornerRadius(8)
                                     .foregroundStyle(.black)
                                     .padding(.trailing, 10)
                             }
@@ -169,10 +197,8 @@ struct MainEnglishKeyboard: View {
                                             .foregroundStyle(.black)
                                     }
                                 }
-                                // Bottom Row Buttons
+
                                 HStack {
-                                    
-                                    // Numbers Keyboard
                                     Button("123") {
                                         proxy.insertText("123")
                                     }
@@ -183,8 +209,6 @@ struct MainEnglishKeyboard: View {
                                     .foregroundStyle(.black)
                                     .padding(.trailing, 10)
 
-                                    
-                                    // Symbols Keyboard
                                     Button("#+=") {
                                         proxy.insertText("#+=")
                                     }
@@ -194,8 +218,7 @@ struct MainEnglishKeyboard: View {
                                     .cornerRadius(8)
                                     .foregroundStyle(.black)
                                     .padding(.trailing, 5)
-                                    
-                                    // Backspace
+
                                     Button(action: {
                                         proxy.deleteBackward()
                                     }) {
@@ -209,15 +232,9 @@ struct MainEnglishKeyboard: View {
                                 }
                             }
                         }
-                        
                     }
-                    
-                    // Emoji, Space, Return
                     HStack {
-                        // Emoji Button
-                        Button(action: {
-                            // Placeholder for emoji action
-                        }) {
+                        Button(action: {}) {
                             Image(systemName: "face.smiling")
                                 .frame(width: 56, height: 55)
                                 .background(Color(.systemGray2))
@@ -227,7 +244,6 @@ struct MainEnglishKeyboard: View {
                                 .padding(.leading, -5)
                         }
                         
-                        // Space Bar
                         Button("space") {
                             proxy.insertText(" ")
                         }
@@ -236,7 +252,6 @@ struct MainEnglishKeyboard: View {
                         .cornerRadius(8)
                         .foregroundStyle(.black)
                         
-                        // Return Key
                         Button("return") {
                             proxy.insertText("\n")
                         }
@@ -250,15 +265,13 @@ struct MainEnglishKeyboard: View {
                 .padding(.horizontal)
             }
         }
-        .onChange(of: proxy.documentContextBeforeInput) { newValue in
-            updatePredictions(from: newValue)
-        }
     }
-    
     // MARK: - Top Bar View
     struct TopBarView: View {
         @State var proxy: UITextDocumentProxy
         @Binding var predictions: [String]
+        @Binding var showClipboard: Bool
+        @Binding var showClipboardKeys: Bool
 
         var body: some View {
             HStack {
@@ -277,9 +290,7 @@ struct MainEnglishKeyboard: View {
 
                 // Clipboard Button
                 Button(action: {
-                    if let clipboardText = UIPasteboard.general.string {
-                        proxy.insertText(clipboardText) // Inserts clipboard text
-                    }
+                    showClipboardKeys = true // Show enlarged clipboard layout
                 }) {
                     Image(systemName: "list.clipboard")
                         .font(.system(size: 30))
@@ -288,7 +299,9 @@ struct MainEnglishKeyboard: View {
                         .cornerRadius(8)
                         .foregroundStyle(.black)
                 }
-                .padding(.horizontal)
+                .sheet(isPresented: $showClipboard) {
+                    ClipboardView(proxy: proxy) // Show ClipboardView
+                }                .padding(.horizontal)
 
                 // Divider Line
                 Divider()
@@ -308,7 +321,93 @@ struct MainEnglishKeyboard: View {
         }
     }
     
+    struct ClipboardView: View {
+        @Environment(\.modelContext) private var modelContext
+        @Query private var savedPhrases: [Phrase]
+        var proxy: UITextDocumentProxy
+        
+        var body: some View {
+            VStack {
+                Text("My Clipboard")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .padding(.top)
+                
+                ScrollView {
+                    VStack(spacing: 10) {
+                        ForEach(savedPhrases) { phrase in
+                            Button(action: {
+                                proxy.insertText(phrase.content + " ") // Insert phrase
+                            }) {
+                                Text(phrase.content)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding()
+                            }
+                            .background(Color(.systemGray6))
+                            .cornerRadius(8)
+                        }
+                    }
+                }
+                .padding()
+            }
+        }
+    }
     
+    struct ClipboardKeysView: View {
+        @Environment(\.modelContext) private var modelContext // Access SwiftData
+        @Query var savedPhrases: [Phrase] // Phrases fetched from SwiftData
+        
+        var proxy: UITextDocumentProxy
+        @Binding var showClipboardKeys: Bool // Toggle back to main view
+        
+        var body: some View {
+            VStack {
+                // Top Bar with Back Button
+                HStack {
+                    Button(action: {
+                        showClipboardKeys = false // Go back to main keyboard
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 24))
+                            .padding(.leading)
+                            .padding(.top, 30)
+                            .foregroundStyle(Color.black)
+                        Text("Back")
+                            .font(.system(size: 20))
+                            .padding(.top, 30)
+                            .foregroundStyle(Color.black)
+                    }
+                    Spacer()
+                }
+                .padding(.bottom, 10)
+
+                // Display Saved Phrases
+                TabView {
+                    ForEach(savedPhrases.chunked(into: 4), id: \.self) { chunk in
+                        VStack(spacing: 10) {
+                            ForEach(chunk) { phrase in
+                                Button(action: {
+                                    proxy.insertText(phrase.content + " ")
+                                }) {
+                                    Text(phrase.content)
+                                        .frame(width: 150, height: 100)
+                                        .background(Color.white)
+                                        .font(.system(size: 25))
+                                        .cornerRadius(8)
+                                        .foregroundStyle(.black)
+                                        .padding(5)
+                                }
+                            }
+                        }
+                    }
+                }
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+                .frame(height: 300) // Set height for pages
+                .padding()
+            }
+        }
+    }
+        
     // Prediction Logic
     func updatePredictions(from context: String?) {
         guard let context = context, !context.isEmpty else {
@@ -402,4 +501,10 @@ struct MainEnglishKeyboard: View {
         }
         .padding(.bottom, 20)
     }
-
+extension Array {
+    func chunked(into size: Int) -> [[Element]] {
+        stride(from: 0, to: count, by: size).map {
+            Array(self[$0..<Swift.min($0 + size, count)])
+        }
+    }
+}
