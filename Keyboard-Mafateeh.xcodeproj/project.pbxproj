@@ -63,6 +63,13 @@
 			);
 			target = 3238748D2D1BEE190078B374 /* EnglishKeyboardView */;
 		};
+		3269BA1A2D2144BF002829C6 /* Exceptions for "EnglishKeyboardView" folder in "Keyboard-Mafateeh" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MainEnglishKeyboard.swift,
+			);
+			target = 3238745A2D1BEDF10078B374 /* Keyboard-Mafateeh */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -84,6 +91,7 @@
 		3238748F2D1BEE190078B374 /* EnglishKeyboardView */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				3269BA1A2D2144BF002829C6 /* Exceptions for "EnglishKeyboardView" folder in "Keyboard-Mafateeh" target */,
 				323874962D1BEE190078B374 /* Exceptions for "EnglishKeyboardView" folder in "EnglishKeyboardView" target */,
 			);
 			path = EnglishKeyboardView;
@@ -493,6 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Keyboard-Mafateeh/Keyboard-Mafateeh.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Keyboard-Mafateeh/Preview Content\"";
@@ -509,7 +518,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -522,6 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Keyboard-Mafateeh/Keyboard-Mafateeh.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Keyboard-Mafateeh/Preview Content\"";
@@ -538,7 +548,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -556,7 +566,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-MafateehTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh2Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -575,7 +585,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-MafateehTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh2Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -592,7 +602,7 @@
 				DEVELOPMENT_TEAM = WVVL9YZMLF;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-MafateehUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh2UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -609,7 +619,7 @@
 				DEVELOPMENT_TEAM = WVVL9YZMLF;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-MafateehUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh2UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -621,6 +631,7 @@
 		323874982D1BEE190078B374 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EnglishKeyboardView/EnglishKeyboardView.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WVVL9YZMLF;
@@ -634,7 +645,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh.EnglishKeyboardView";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh2.EnglishKeyboardView";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -646,6 +657,7 @@
 		323874992D1BEE190078B374 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EnglishKeyboardView/EnglishKeyboardView.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WVVL9YZMLF;
@@ -659,7 +671,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh.EnglishKeyboardView";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keyboard.Keyboard-Mafateeh2.EnglishKeyboardView";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

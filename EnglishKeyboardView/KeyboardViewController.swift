@@ -25,7 +25,19 @@ class KeyboardViewController: UIInputViewController {
             Phrase.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
+        
+        let appGroupURL = FileManager.default.containerURL(
+            forSecurityApplicationGroupIdentifier: "group.com.keyboard.mafateeh"
+        )
+        
+        if let appGroupURL = FileManager.default.containerURL(
+            forSecurityApplicationGroupIdentifier: "group.com.keyboard.mafateeh"
+        ) {
+            print("App Group URL: \(appGroupURL)")
+        } else {
+            fatalError("App Group URL could not be resolved.")
+        }
+        
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
         } catch {

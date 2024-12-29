@@ -16,6 +16,27 @@ class Phrase: Identifiable {
     }
 }
 
+var sharedModelContainer: ModelContainer = {
+    let schema = Schema([
+        Phrase.self,
+    ])
+
+    let appGroupURL = FileManager.default.containerURL(
+        forSecurityApplicationGroupIdentifier: "group.com.yourapp.mafateeh" // Replace with your App Group ID
+    )!.appendingPathComponent("SharedDatabase.sqlite")
+
+    let modelConfiguration = ModelConfiguration(
+        schema: schema,
+        url: appGroupURL // Shared storage location
+    )
+
+    do {
+        return try ModelContainer(for: schema, configurations: [modelConfiguration])
+    } catch {
+        fatalError("Could not create ModelContainer: \(error)")
+    }
+}()
+
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var savedPhrases: [Phrase]

@@ -34,7 +34,7 @@ struct MainEnglishKeyboard: View {
     // Grouped Keys (Uppercase)
     let group1Upper: [(String, [String])] = [
         ("Q  W  E                    A  S  D", ["Q", "W", "E", "A", "S", "D"]),
-        ("R  T  Y  U                 F  G  H", ["R", "T", "Y", "U", "F", "G", "H"]),
+        ("R T Y U                 F  G  H", ["R", "T", "Y", "U", "F", "G", "H"]),
         ("I  O  P                    J  K  L", ["I", "O", "P", "J", "K", "L"])
     ]
 
@@ -48,13 +48,13 @@ struct MainEnglishKeyboard: View {
             if !showClipboardKeys {
                 TopBarView(
                     proxy: proxy,
-                    predictions: $predictions,
-                    showClipboard: $showClipboard,
+                    predictions: $predictions,                     showClipboard: $showClipboard,
                     showClipboardKeys: $showClipboardKeys
                 )
                 .padding(.bottom)
             }
-
+            // Call fetchPhrases when keyboard loads
+            }
             // Check if ClipboardKeysView should be shown
             if showClipboardKeys {
                 // Enlarged clipboard layout
@@ -85,12 +85,13 @@ struct MainEnglishKeyboard: View {
                             Button(action:  {
                                 showEnlargedKeys = false
                             }) {
-                                Image(systemName: "arrowshape.turn.up.right")
+                                Image(systemName: "chevron.forward")
                                     .frame(width: 61, height: 55)
                                     .background(Color(.systemGray2))
                                     .font(.system(size: 30))
                                     .cornerRadius(8)
                                     .foregroundStyle(.black)
+                                    .padding(.trailing, 5)
                                     .padding(.top)
                                     .padding(.leading)
                             }
@@ -107,8 +108,8 @@ struct MainEnglishKeyboard: View {
                                     .foregroundStyle(.black)
                             }
                         }
-                        .padding(.top, 100)
-                        .padding(.leading, 290)
+                        .padding(.top, 104)
+                        .padding(.leading, 296)
                     }
                     
                     // Bottom buttons for space, shift, return
@@ -319,6 +320,37 @@ struct MainEnglishKeyboard: View {
             .padding(.horizontal)
             .padding(.top)
         }
+        // Prediction Logic
+        func updatePredictions(from context: String?) {
+            guard let context = context, !context.isEmpty else {
+                predictions = ["I", "We"] // Default predictions
+                return
+            }
+
+            let words = context.split(separator: " ")
+            let lastWord = words.last?.lowercased() ?? ""
+
+            // Example static predictions based on the last word
+            switch lastWord {
+            case "i":
+                predictions = ["I'm", "is"]
+            case "h":
+                predictions = ["hi", "hello"]
+            case "you":
+                predictions = ["are", "will"]
+            case "we":
+                predictions = ["are", "can"]
+            case "he":
+                predictions = ["is", "was"]
+            case "she":
+                predictions = ["is", "was"]
+            case "it":
+                predictions = ["is", "will"]
+            default:
+                predictions = ["I", "The"]
+            }
+        }
+
     }
     
     struct ClipboardView: View {
@@ -354,8 +386,8 @@ struct MainEnglishKeyboard: View {
     }
     
     struct ClipboardKeysView: View {
-        @Environment(\.modelContext) private var modelContext // Access SwiftData
-        @Query var savedPhrases: [Phrase] // Phrases fetched from SwiftData
+        @Environment(\.modelContext) private var modelContext // Access the shared database context
+        @State private var savedPhrases: [Phrase] = [] // Use state to hold data locally
         
         var proxy: UITextDocumentProxy
         @Binding var showClipboardKeys: Bool // Toggle back to main view
@@ -380,10 +412,15 @@ struct MainEnglishKeyboard: View {
                     Spacer()
                 }
                 .padding(.bottom, 10)
-
+                
                 // Display Saved Phrases
                 TabView {
-                    ForEach(savedPhrases.chunked(into: 4), id: \.self) { chunk in
+                    Text("+")
+                        .frame(width: 150, height: 100)
+                        .foregroundStyle(Color.black)
+                        .background(Color.white)
+                        .cornerRadius(10)
+                    ForEach(savedPhrases.chunked(into: 3), id: \.self) { chunk in
                         VStack(spacing: 10) {
                             ForEach(chunk) { phrase in
                                 Button(action: {
@@ -404,42 +441,45 @@ struct MainEnglishKeyboard: View {
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
                 .frame(height: 300) // Set height for pages
                 .padding()
+                ForEach(savedPhrases, id: \.self) { phrase in
+                    Button(action: {
+                        proxy.insertText(phrase.content + " ")
+                    }) {
+                        Text(phrase.content)
+                            .frame(width: 150, height: 100)
+                            .background(Color.white)
+                            .font(.system(size: 25))
+                            .cornerRadius(8)
+                            .foregroundStyle(.black)
+                            .padding(5)
+                    }
+                }
+            }
+            .onAppear {
+                fetchPhrases()
+            }
+        }
+        func fetchClipboardPhrases() {
+            let fetchDescriptor = FetchDescriptor<Phrase>()
+            do {
+                savedPhrases = try modelContext.fetch(fetchDescriptor) // Fetch phrases
+                print("Fetched phrases: \(savedPhrases)") // Debug log
+            } catch {
+                print("Failed to fetch phrases: \(error)") // Debug log
+            }
+        }
+        func fetchPhrases() {
+            // Fetch saved phrases from SwiftData model context
+            let fetchDescriptor = FetchDescriptor<Phrase>() // Fetch all Phrase objects
+            do {
+                let phrases = try modelContext.fetch(fetchDescriptor)
+                print("Fetched phrases: \(phrases)") // Debug output
+            } catch {
+                print("Failed to fetch phrases: \(error)") // Handle errors
             }
         }
     }
         
-    // Prediction Logic
-    func updatePredictions(from context: String?) {
-        guard let context = context, !context.isEmpty else {
-            predictions = ["I", "We"] // Default predictions
-            return
-        }
-
-        let words = context.split(separator: " ")
-        let lastWord = words.last?.lowercased() ?? ""
-
-        // Example static predictions based on the last word
-        switch lastWord {
-        case "i":
-            predictions = ["I'm", "is"]
-        case "h":
-            predictions = ["hi", "hello"]
-        case "you":
-            predictions = ["are", "will"]
-        case "we":
-            predictions = ["are", "can"]
-        case "he":
-            predictions = ["is", "was"]
-        case "she":
-            predictions = ["is", "was"]
-        case "it":
-            predictions = ["is", "will"]
-        default:
-            predictions = ["I", "The"]
-        }
-    }
-}
-
     // Enlarged Keys Templates
     func templateOne(keys: [String], proxy: UITextDocumentProxy, showEnlargedKeys: Binding<Bool>) -> some View {
         VStack(spacing: 20) {
